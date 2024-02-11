@@ -1,0 +1,705 @@
+@font-face {
+    font-family: Be Vietnam Pro;
+    src: url(BeVietnamPro-Regular.ttf);
+}
+
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Be Vietnam Pro", sans-serif;
+    scroll-behavior: smooth;
+    
+}
+:root{
+    --bgOrange: rgb(255, 36, 36); 
+}
+
+#wrapper {
+    height: 100vh;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.container {
+    height: 100%;
+    margin: 0 auto;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+
+}
+
+.logo-container {
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.logo {
+    width: 70px;
+}
+.logok{
+    padding-left: 2px;
+    width: 80px;   
+}
+
+
+.logo-text {
+
+    margin-left: -1.2;
+    font-size: 29px;
+
+}
+
+.nav-items {
+    display: flex;
+    gap: 2rem;
+    padding: 0 4rem;
+}
+
+.nav-items div {
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+
+}
+
+/* or apply like this */
+.nav-items div a {
+    color: black;
+}
+
+a{
+    text-decoration: none;
+    /* color: black */
+}
+
+.nav-items div:hover{
+    font-weight: bold;
+    transition: 1s;
+}
+
+.front-section{
+    position: relative;
+    display: flex;
+    
+    justify-content: center;   
+    align-items: center;  
+
+    gap: 5rem;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    padding-bottom: 8rem;
+}
+
+.faded-text{
+    
+    position: absolute;
+    user-select:none;
+    font-size: 6em;
+    color: rgb(231, 231, 231);
+    bottom: -18%;
+    left: -1%;
+
+    transition: all 3s;
+}
+
+.front-section-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.front-section-heading{
+    font-size: 35px;
+    color: rgb(16, 9, 43);
+    font-weight: 500;
+}
+.role{
+    color: rgb(34, 34, 168);
+    font-weight: 800;
+}
+
+.btn-orange{
+    background-color: var(--bgOrange);
+    width: fit-content;
+    padding: 0.8rem 2.3rem;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    box-shadow: 3px 3px 7px 0px black;
+    border: solid 3px transparent;
+    position: relative;
+    transition: all 1s;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 3px;
+    
+    
+}
+.btn-orange::before {
+    content: "";
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255);
+ 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.8s;
+    z-index: -1;
+}
+.btn-orange:hover::before{
+   transform: scaleX(1);
+    
+}
+.btn-orange:hover{
+    border: solid 3px var(--bgOrange);
+    color: black;
+}
+#btn-bottom{
+    display: none;
+}
+.front-section-right{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+.user{
+    padding: 2.5rem;
+    filter: grayscale(1);
+    transition: all 1s;
+    animation: scaleImage 5s linear infinite;
+}
+.user img{
+    z-index: -9;
+}
+@keyframes scaleImage{
+    0%{
+      filter:grayscale(1);
+      transform: scale(1);
+    }
+    50%{
+        filter:grayscale(0);
+        transform: scale(1.1);
+         
+    }
+    100%{
+        filter:grayscale(1);
+        transform: scale(1);
+        box-shadow: 3px 3px 10px black;
+    }
+}
+.icon-dots{
+    z-index: 9;
+    bottom: -1rem ;
+    right: 0;
+    animation: dotsanimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes dotsanimation{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-15px );
+    }
+    100%{
+        transform: translateY(15px );
+    }
+
+}
+
+.icon-circle{
+    z-index: 9;
+    bottom: 0 ;
+    left: 0;
+    animation: circleanimation;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes circleanimation{
+    
+    0%{
+        left: 0;
+        bottom: 0;
+    }
+    50%{
+        left: 5%;
+        bottom: 10%;
+    }
+    
+    100%{
+        left: 0;
+        bottom: 0;
+    }
+    /* we can alsop remove 0% and 100% ones */
+   
+
+}
+.icon-zigzags{
+    z-index: 9;
+    top: 1.5em ;
+    left: -0.3em;
+    animation: zigzagsanimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes zigzagsanimation{
+  
+    50%{
+        left: 5%;
+        top: 2%;
+    }
+
+}
+.icon-plus{
+    z-index: 9;
+    top: 0.8rem ;
+    left: 50%;
+    animation: plusanimation;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+@keyframes plusanimation{
+   
+    50%{
+        top: 3%;
+        left: 48%;
+    }
+    
+
+}
+
+.icon-cube{
+    z-index: 9;
+    top: -0.8em;
+    right: 1em;
+    animation: cubeanimation;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+}
+@keyframes cubeanimation{
+    0%{
+        transform: rotateY(0deg) translateY(0);
+        /* transform: scaleX(-1); */
+    }
+    50%{
+        transform: rotateY(180deg) translateY(-13px);
+        /* transform: scaleX(1); */
+    }
+    100%{
+        transform: rotateY(360deg) translateY(0);
+        /* transform: scaleX(-1); */
+    }
+
+}
+
+.project-section{
+    background-color: rgb(231, 231, 231);
+
+}
+.page-header{
+    color: var(--bgOrange);
+    font-size: 90px;
+    text-align: center;
+    padding-top: 30px;    
+}
+  
+.project-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 120px; 
+}
+.project-card{
+    width: 100%;
+    height: 550px;
+    background-image: url(./images/Projects/project4.png);
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    position: relative;
+    box-shadow: 0px 0px 40px #1f1f1f;
+    
+}
+/* To make the shadow above the box */
+.project-card::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1f1f1f9a;
+    z-index: 0;
+}
+
+.project-card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #343d68, #343d68be,#343d687c);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.4s;
+    z-index: 1;
+}
+.project-card:hover::before{
+    transform: scaleX(1);
+}
+.project-number{
+    position: absolute;
+    font-size: 200px;
+    font-weight: 600;
+    color: white; 
+    z-index: 10;
+    /* display: none; */
+    opacity: 0;
+}
+
+/* to hide the number */
+
+.project-card:hover .project-number{
+    /* display: block ; */
+    opacity: 1;
+}
+
+.project-number-left{
+    left: -40px;
+    top: -45px;
+
+}
+.project-number-right{
+    right: -40px;
+    top: -45px;
+
+}
+.project-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    bottom: 20%;
+    gap: 1em;
+    transition: all 0.4s;
+
+}
+.project-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color:white;
+    padding: 2em;
+    bottom: 20%;
+    z-index:5;
+
+    gap: 1em;
+    transition: all 0.4s ;
+}    
+.project-content-left{
+    left: 10%;
+}
+.project-content-right{
+    right: -10%;
+}
+
+
+.project-skills-container{
+    width: 60%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+}
+.project-skill{
+    width: 40px;
+}
+.project-heading{
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 3rem ;
+}
+.project-subheading{
+    width: 70%;
+    font-size: 16px;
+    font-style: italic;
+}
+
+
+
+
+.btn-grp{
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+}
+.btn-project:hover{
+    border: none ;
+}
+.icon{
+    cursor: pointer;
+    color: white;
+    font-size: 35px;
+}
+.icon:hover{
+    color:var(--bgOrange);
+}
+.project-card:hover .project-content{
+    transform: scale(1.1);
+}
+
+
+
+#project1{
+    background-image: url(./images/projects/Project1.png);
+}
+#project2{
+    margin-left: 120px;
+    background-image: url(./images/projects/Project2.png);
+}
+#project3{
+    background-image: url(./images/projects/Project3.png);
+}
+#project4{
+    margin-left: 120px;
+    background-image: url(./images/projects/Project4.png);
+}
+
+
+/* for other devices */
+@media (max-width: 1300px) {
+.page-header { 
+padding-top: 30px;
+color: var(--bg0range);
+text-align: center;
+font-size: 40px;
+}
+.project-container { padding: 5px; margin: 10px; gap: 60px; }
+.project-card {
+width: 100%; height: 300px;
+}
+.project-card {
+background-size: cover; 
+background-position: center; 
+}
+.project-content {
+    scale: 0.5;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0; }
+.project-content-left { left: 0;
+    }
+.project-heading { font-size: 40px; width: 100%;
+    }
+.project-sub-heading { width: 100%;
+    }
+#project2 {
+    margin-left: 0;
+    }
+    #project4 {
+    margin-left: 0;
+    }
+    .project-skill-container { width: 100%;
+    }
+    .project-skill { width: 35px;
+    }
+    .project-card:hover .project-number { display: none;
+    }
+    .project-card:hover .project-content { scale: 0.55;
+    }
+
+
+}
+
+.skills-container{
+    position: relative;
+    display: flex;
+    justify-content: center;   
+    align-items: center;  
+    padding: 50px;
+    margin: 10rem auto;
+    gap: 30px;
+}
+.skills-container-left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+}
+.skills-container-right{
+    display: flex;
+    flex-wrap: wrap;
+    width: 40em;
+    position: relative;
+    gap: 2rem;
+}
+.skills-fade-text{
+    position: absolute;
+    font-size: 12rem;
+    font-style: bold;
+    color: rgb(231, 231, 231);
+    bottom: -31%;
+    right: -49%;
+    user-select: none;
+    width: 100%;
+    height: fit-content
+}
+.blob-style{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    animation: blob 4s linear infinite;
+    z-index: -5;
+
+}
+@keyframes blob{
+   
+    50%{
+        top: 24%;
+        left: 46%;
+      
+
+    }
+  
+
+}
+.skill-logo{
+    width: 6rem;
+    transition: all 0.5s;
+}
+.skills-heading{
+    font-size: 2.5em;
+    font-style: bold;
+    color: var(--bgOrange);
+    line-height: 50px;
+    padding-bottom: 2rem;
+} 
+.caps{
+    font-size: 4rem;
+    color: red;
+}
+.skill-subheading{
+    width: 85%;
+    text-align: justify;
+}
+.contact-us-form-container{
+    width: 100%;
+    background-color: rgb(231, 231, 231);
+    display: flex;
+}
+
+.contact-us-heading{
+    font-size: 5em;
+    color:var(--bgOrange);
+    padding-top: 2rem; ;
+
+}
+.contact-us-subheading{
+    font-size: 3rem;
+    color: #343d68aa;
+}
+
+.contact-us-form-container{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;   
+    align-items: center;  
+}
+.formfield-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    width: 70%;
+    margin: 2rem 5rem;
+}
+.formfield{
+    width: 100%;
+    height: 42px;
+    padding: 0 2rem;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #1f1f1f ;
+    border: none;
+    margin-top: 17px;
+}    
+.formfield-textarea{
+     height: auto;
+     padding-top: 1rem;
+}
+.submit-btn{
+    border: none;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+
+}
+#submit-btn:hover{
+    scale: 0.9;
+}
+.submit-icon{
+    padding: 0 1rem;
+    font-size: 1.5rem; 
+}
+footer{
+    position: relative;
+    width: 100%;
+    height: 19rem;
+
+    align-items: center;
+    gap: 11rem;
+    background-color: #040482;
+}
+.footer-wrapper{
+    display: flex;
+    gap: 1rem;
+    padding: 1.2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-faded-text{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #535c87;
+    user-select: none;
+    font-size: 5em;
+
+}
+.link-wrapper{
+    z-index: 3;
+    display: flex;
+    gap: 1.2em;
+}
+.link-wrapper div a{
+    color :white;
+    text-decoration: none;
+    transition: all 0.6s;
+}
+.link-wrapper div a:hover{
+    color: var(--bgOrange);
+    text-decoration: none;  
+}
+.icon-wrapper{
+    display: flex;
+    gap: 1rem;
+}
